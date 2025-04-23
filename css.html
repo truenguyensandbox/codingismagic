@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 You’ve found the style vault. May your colors never clash. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🎨 CSS – Glamour Charms</h1>
+      <p class="text-lg text-pink-700">With CSS, your structure begins to shimmer. Form becomes function, and function becomes beautiful.</p>
+    </header>
+
+    <!-- Lesson: What is CSS -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">✨ What is CSS?</h2>
+      <p>CSS stands for <strong>Cascading Style Sheets</strong>, but here, we call it the glamour charm of web magic. It transforms raw structure into shimmering design — adjusting color, layout, spacing, motion, and more.</p>
+    </section>
+
+    <!-- Selectors -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🎯 Selectors = Targeting Spells</h2>
+      <p>To cast a style, you must target the element. Use its tag, class, or ID to focus your charm.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`p {\\n  color: #F4ACB7;\\n}`)" 
+                data-tooltip="Copy this selector spell"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>p {
+  color: #F4ACB7;
+}</code></pre>
+      </div>
+      <p>This targets all paragraph tags with a soft blush of magical text color.</p>
+    </section>
+
+    <!-- Properties -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧪 Properties = Style Ingredients</h2>
+      <p>Each declaration includes a <strong>property</strong> and a <strong>value</strong> — like choosing your spell ingredients and amounts.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`.spell-card {\\n  background: #FFF0F3;\\n  border-radius: 1rem;\\n  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);\\n}`)" 
+                data-tooltip="Copy spell card style"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>.spell-card {
+  background: #FFF0F3;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}</code></pre>
+      </div>
+      <p>This wraps your element in a soft, glowing charm.</p>
+    </section>
+
+    <!-- Cascade -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🌊 The Cascade</h2>
+      <p>If multiple spells apply to the same element, the cascade determines which one wins. More specific selectors win over general ones. Later rules override earlier ones.</p>
+    </section>
+
+    <!-- Next Link -->
+    <div class="text-right mb-10">
+      <a href="javascript.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Bring Your Page to Life with JavaScript →</a>
+    </div>
+
+    <!-- Signature Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+
+  </main>
+
+  <!-- Copy Tooltip Script -->
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

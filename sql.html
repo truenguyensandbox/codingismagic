@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SQL – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 SQL is not guessing — it is the language of absolute clarity. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🧠 SQL – Structured Thought Binding</h1>
+      <p class="text-lg text-pink-700">SQL is how you speak to databases — a language of questions, tables, and hidden truths.</p>
+    </header>
+
+    <!-- What is SQL -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📜 What is SQL?</h2>
+      <p>SQL (Structured Query Language) is the language of databases. It helps you retrieve, store, update, and link magical data stored in sacred tables. SQL doesn’t guess. It obeys with clarity and precision.</p>
+    </section>
+
+    <!-- SELECT -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🔍 SELECT – Retrieve a Truth</h2>
+      <p>Want to see something? Use <code>SELECT</code> — it’s a request to the vault.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto mb-2">
+        <button onclick="navigator.clipboard.writeText('SELECT * FROM spells;')" data-tooltip="Copy SELECT" class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>SELECT * FROM spells;</code></pre>
+      </div>
+      <p>This returns every row and column from the <code>spells</code> table — like opening a scroll completely.</p>
+    </section>
+
+    <!-- WHERE -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧙 WHERE – Filter the Vision</h2>
+      <p>Use <code>WHERE</code> to narrow your gaze — only see what meets your conditions.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto mb-2">
+        <button onclick="navigator.clipboard.writeText('SELECT name FROM spells WHERE power > 80;')" data-tooltip="Copy WHERE" class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>SELECT name FROM spells WHERE power &gt; 80;</code></pre>
+      </div>
+      <p>This returns only the most potent spells.</p>
+    </section>
+
+    <!-- JOIN -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🔗 JOIN – Merge Realms</h2>
+      <p>Combine knowledge from multiple tables with a JOIN — like weaving spell scrolls into a bigger incantation.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto mb-2">
+        <button onclick="navigator.clipboard.writeText('SELECT wizards.name, spells.name FROM wizards JOIN spells ON wizards.id = spells.wizard_id;')" data-tooltip="Copy JOIN" class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>SELECT wizards.name, spells.name 
+FROM wizards 
+JOIN spells ON wizards.id = spells.wizard_id;</code></pre>
+      </div>
+      <p>You now see which wizard cast which spell.</p>
+    </section>
+
+    <!-- Next Page -->
+    <div class="text-right mb-10">
+      <a href="postgresql.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Master the Runebound Depths with PostgreSQL →</a>
+    </div>
+
+    <!-- Footer Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

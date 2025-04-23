@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CI/CD – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 Dev hint: You're peeking into the automation shrine. Welcome, initiate. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🔄 CI/CD – Automated Spell Deployment</h1>
+      <p class="text-lg text-pink-700">Cast your spells once, and they test, build, and deploy themselves from then on.</p>
+    </header>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">⚙️ What is CI/CD?</h2>
+      <p>CI/CD stands for <strong>Continuous Integration</strong> and <strong>Continuous Deployment</strong>. It’s like setting up a self-running ritual that tests your code and sends it to the world — safely, consistently, and magically.</p>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">✨ CI – Continuous Integration</h2>
+      <p>Every time you push code, your system runs tests automatically. This catches bugs before they escape the lab.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`# Example GitHub Actions CI config\\nname: Run tests\\non: [push]\\njobs:\\n  test:\\n    runs-on: ubuntu-latest\\n    steps:\\n    - uses: actions/checkout@v2\\n    - name: Install Dependencies\\n      run: npm install\\n    - name: Run Tests\\n      run: npm test`)" 
+                data-tooltip="Copy CI YAML spell"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code># Example GitHub Actions CI config
+name: Run tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: npm install
+    - name: Run Tests
+      run: npm test</code></pre>
+      </div>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🚀 CD – Continuous Deployment</h2>
+      <p>CD automates the delivery of your app to staging or production. Once your spell passes inspection, it’s sent into the world.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`steps:\\n- name: Deploy to Render\\n  run: curl -X POST $RENDER_DEPLOY_HOOK`)" 
+                data-tooltip="Copy CD step"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>steps:
+- name: Deploy to Render
+  run: curl -X POST $RENDER_DEPLOY_HOOK</code></pre>
+      </div>
+      <p>Tools like Render, Netlify, Vercel, and GitHub Pages work beautifully with CI/CD.</p>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧠 Why CI/CD?</h2>
+      <ul class="list-disc list-inside text-pink-800">
+        <li>✅ Prevents bugs from escaping</li>
+        <li>⚡ Speeds up development safely</li>
+        <li>🔁 Makes collaboration seamless</li>
+        <li>🧙 Lets you focus on coding, not rituals</li>
+      </ul>
+    </section>
+
+    <div class="text-right mb-10">
+      <a href="tools.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Gather Your Arcane Tools →</a>
+    </div>
+
+    <!-- Signature Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+
+  </main>
+
+  <!-- Copy Tooltip Feedback Script -->
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

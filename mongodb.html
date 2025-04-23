@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MongoDB – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 Mongo is the wild magic database — it bends but rarely breaks. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🌿 MongoDB – The NoSQL Memory Forest</h1>
+      <p class="text-lg text-pink-700">MongoDB stores data like scrolls on trees — flexible, freeform, and fast-growing.</p>
+    </header>
+
+    <!-- What is MongoDB -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📦 What is MongoDB?</h2>
+      <p>MongoDB is a NoSQL database — it doesn’t use tables or rows. Instead, it stores <strong>documents</strong> (like JSON) in <strong>collections</strong>. It’s perfect for when your spellbook needs flexibility and growth.</p>
+    </section>
+
+    <!-- Documents -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📜 Documents – Scrolls of Stored Magic</h2>
+      <p>A document is like a personalized spell scroll — each can contain different keys, values, and even nested information.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`{\\n  name: \\\\\"Fireball\\\\\",\\n  power: 95,\\n  type: \\\\\"fire\\\\\"\\n}`)" 
+                data-tooltip="Copy document example"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>{
+  name: "Fireball",
+  power: 95,
+  type: "fire"
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🌳 Collections – Groves of Similar Scrolls</h2>
+      <p>Documents live inside collections — organized, but not rigid. It’s like a magical forest where every tree (document) is unique, but related.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`db.spells.insertOne({\\n  name: \\\\\"Frostbolt\\\\\",\\n  power: 65,\\n  type: \\\\\"ice\\\\\"\\n});`)" 
+                data-tooltip="Copy insert spell"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>db.spells.insertOne({
+  name: "Frostbolt",
+  power: 65,
+  type: "ice"
+});</code></pre>
+      </div>
+    </section>
+
+    <!-- Finding -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🔍 Finding Magic in the Forest</h2>
+      <p>Use queries to find scrolls that match your criteria.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`db.spells.find({ power: { $gt: 70 } });`)" 
+                data-tooltip="Copy find query"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>db.spells.find({ power: { $gt: 70 } });</code></pre>
+      </div>
+      <p>This finds all spells stronger than 70 mana.</p>
+    </section>
+
+    <!-- When to Use -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🌈 When to Use MongoDB?</h2>
+      <ul class="list-disc list-inside text-pink-800">
+        <li>🌱 When your data structure evolves often</li>
+        <li>⚡ When you want rapid development</li>
+        <li>📖 When you want to store rich, nested data</li>
+        <li>🛸 When traditional tables feel too heavy</li>
+      </ul>
+    </section>
+
+    <!-- Next Link -->
+    <div class="text-right mb-10">
+      <a href="git.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Track Time and Changes with Git →</a>
+    </div>
+
+    <!-- Signature Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+  </main>
+
+  <!-- Clipboard script -->
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

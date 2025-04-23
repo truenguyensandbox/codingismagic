@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>React – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 React is the magic mirror — it reflects the state of your world. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🧩 React – Reusable Interface Magic</h1>
+      <p class="text-lg text-pink-700">React lets you build interactive enchantments from reusable UI spell scrolls.</p>
+    </header>
+
+    <!-- What is React -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">✨ What is React?</h2>
+      <p>React is a JavaScript library that lets you build <strong>components</strong> — pieces of your interface that update themselves when the state changes. It’s like creating enchanted UI scrolls that re-render with every breeze of data.</p>
+    </section>
+
+    <!-- Components -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📦 Components – Custom Spell Scrolls</h2>
+      <p>A React component is a reusable bit of interface magic. It can hold its own logic, structure, and style — and be summoned wherever you need it.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText('function SpellButton() {\\n  return <button>✨ Cast Spell</button>;\\n}')" 
+          data-tooltip="Copy component" 
+          class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>function SpellButton() {
+  return &lt;button&gt;✨ Cast Spell&lt;/button&gt;;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- Props -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧪 Props – Spell Ingredients</h2>
+      <p>Props are how you pass unique ingredients into your spell — allowing each scroll to behave slightly differently.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText('function Spell({ name }) {\\n  return <p>You cast {name}!</p>;\\n}')" 
+          data-tooltip="Copy props example" 
+          class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>function Spell({ name }) {
+  return &lt;p&gt;You cast {name}!&lt;/p&gt;;
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- State -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">⚙️ State – Reactive Mood Shifts</h2>
+      <p>A component can change over time. With <code>useState()</code>, your UI responds to user input or internal changes like a spell that re-casts itself.</p>
+      <div class="relative bg-pink-100 p-4 rounded text-sm overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText('const [mana, setMana] = useState(100);\\n\\n<button onClick={() => setMana(mana - 10)}>\\n  🔥 Cast – Mana Left: {mana}\\n</button>')" 
+          data-tooltip="Copy state hook" 
+          class="absolute top-2 right-2 bg-pink-300 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>const [mana, setMana] = useState(100);
+
+&lt;button onClick={() => setMana(mana - 10)}&gt;
+  🔥 Cast – Mana Left: {mana}
+&lt;/button&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Next -->
+    <div class="text-right mb-10">
+      <a href="python.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Step into the Backend Realm with Python →</a>
+    </div>
+
+    <!-- Footer Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

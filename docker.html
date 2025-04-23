@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Docker – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 Docker inside: Magic you can summon in any kingdom */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">📦 Docker – Container Enchantments</h1>
+      <p class="text-lg text-pink-700">Docker lets you trap your spells in a crystal orb — ready to summon anywhere, anytime, perfectly intact.</p>
+    </header>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧪 What is Docker?</h2>
+      <p>Docker is a tool for creating <strong>containers</strong> — small, self-contained environments that include everything your app needs to run. It’s like sealing your spell in a perfectly bound scroll — spell, ingredients, wand, and all.</p>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📜 Dockerfile – The Ritual Scroll</h2>
+      <p>A Dockerfile is your spell recipe — it tells Docker how to build your container.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`# A sample Dockerfile for a Python app\\nFROM python:3.9\\nCOPY . /app\\nWORKDIR /app\\nRUN pip install -r requirements.txt\\nCMD [\\"python\\", \\"spell.py\\"]`)" 
+                data-tooltip="Copy Dockerfile ritual"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code># A sample Dockerfile for a Python app
+FROM python:3.9
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+CMD ["python", "spell.py"]</code></pre>
+      </div>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">⚙️ Build and Summon the Orb</h2>
+      <p>First you build your orb (image), then you summon it (run the container).</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`docker build -t spellbook .\\ndocker run -p 5000:5000 spellbook`)" 
+                data-tooltip="Copy summon commands"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>docker build -t spellbook .
+docker run -p 5000:5000 spellbook</code></pre>
+      </div>
+    </section>
+
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🌍 Why Use Docker?</h2>
+      <ul class="list-disc list-inside text-pink-800">
+        <li>📦 It works the same everywhere (no more “works on my machine”)</li>
+        <li>⚡ Super fast to deploy</li>
+        <li>🧙 Great for testing, staging, and production</li>
+        <li>🎒 Lightweight and portable</li>
+      </ul>
+    </section>
+
+    <div class="text-right mb-10">
+      <a href="bash.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Master the Command Line with Bash →</a>
+    </div>
+
+    <!-- Signature Quote -->
+    <div class="text-center mt-10">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PostgreSQL – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 Postgres is a rune circle. Draw carefully and it never fails. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🌀 PostgreSQL – Precision Data Runes</h1>
+      <p class="text-lg text-pink-700">Postgres is the relational rune master — strict, elegant, and infinitely powerful when handled with respect.</p>
+    </header>
+
+    <!-- What is PostgreSQL -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📖 What is PostgreSQL?</h2>
+      <p>PostgreSQL is a powerful, open-source relational database used by engineers, analysts, and backend sorcerers. It stores data in tables with links between them — like a runic grimoire you can query with clarity.</p>
+    </section>
+
+    <!-- Schema -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📚 Schema – Organize the Vault</h2>
+      <p>A schema is a collection of tables, functions, and types — a vault of magical information that follows rules and roles.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText('CREATE SCHEMA spellbook;')" 
+                data-tooltip="Copy schema spell"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>CREATE SCHEMA spellbook;</code></pre>
+      </div>
+    </section>
+
+    <!-- Tables and Types -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🏛️ Tables and Types</h2>
+      <p>Postgres gives you strict control over the types of your data — ensuring only the right kind of magic goes in the right scroll.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`CREATE TABLE spells (\\n  id SERIAL PRIMARY KEY,\\n  name TEXT NOT NULL,\\n  power INTEGER\\n);`)" 
+                data-tooltip="Copy table spell"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>CREATE TABLE spells (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  power INTEGER
+);</code></pre>
+      </div>
+    </section>
+
+    <!-- Foreign Keys -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🔗 Foreign Keys – Binding Tables by Runes</h2>
+      <p>Use <code>FOREIGN KEY</code> constraints to link tables safely — like drawing connections with protective wards.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded overflow-x-auto">
+        <button onclick="navigator.clipboard.writeText(`ALTER TABLE spells\\nADD COLUMN wizard_id INTEGER REFERENCES wizards(id);`)" 
+                data-tooltip="Copy foreign key"
+                class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">📋</button>
+        <pre><code>ALTER TABLE spells
+ADD COLUMN wizard_id INTEGER REFERENCES wizards(id);</code></pre>
+      </div>
+    </section>
+
+    <!-- Why Use -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-8">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🧙 Why Choose Postgres?</h2>
+      <ul class="list-disc list-inside text-pink-800">
+        <li>✅ ACID-compliant for safe, trustworthy transactions</li>
+        <li>📊 Handles huge data sets like a trained mage</li>
+        <li>🧬 Supports advanced features (JSON, geodata, extensions)</li>
+        <li>💖 Free, open source, and battle-tested</li>
+      </ul>
+    </section>
+
+    <!-- Next Link -->
+    <div class="text-right mb-10">
+      <a href="mongodb.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Explore Unstructured Spells with MongoDB →</a>
+    </div>
+
+    <!-- Signature Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

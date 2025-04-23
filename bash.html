@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bash – Coding is Magic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+
+    /* 🥚 Psst... if you're reading this, you're probably awesome. Keep going. */
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      background: #f4acb7;
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-pink-50 text-pink-900 font-inter min-h-screen">
+
+  <!-- 🧭 Main Navigation -->
+  <nav class="bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-playfair text-pink-700">✨ Coding is Magic</a>
+        <div class="space-x-6">
+          <a href="/fullstack-map.html" class="hover:text-pink-600">🗺️ Spell Map</a>
+          <a href="/about.html" class="hover:text-pink-600">🪄 About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🧙 Main Bash Content -->
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-playfair text-pink-800 mb-4">🖥️ Bash – Command Line Conjuring</h1>
+      <p class="text-lg text-pink-700">The terminal is your altar. Bash is your spell language. Here, you command the system itself.</p>
+    </header>
+
+    <!-- 🔮 Bash Overview -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🔮 What is Bash?</h2>
+      <p>Bash is a command-line shell used in Unix and Linux systems. It’s where real wizards go to cast spells directly — file manipulation, automation, navigation, system control. All in pure rune form.</p>
+    </section>
+
+    <!-- 🗂️ Basic Commands -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">🗂️ Move, Summon, Delete</h2>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button 
+          onclick="navigator.clipboard.writeText(`cd spells/
+ls
+rm cursed-scroll.txt
+mv draft.txt scroll.md`)" 
+          data-tooltip="Copy to clipboard"
+          class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">
+          📋
+        </button>
+        <pre><code>cd spells/
+ls
+rm cursed-scroll.txt
+mv draft.txt scroll.md</code></pre>
+      </div>
+      <p>Bash commands are fast, powerful, and dangerous — use them with intention.</p>
+    </section>
+
+    <!-- 📜 Bash Scripts -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">📜 Scripting Spells</h2>
+      <p>Bash scripts are files full of commands you can run all at once — like a ritual sequence.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button 
+          onclick="navigator.clipboard.writeText(`#!/bin/bash
+echo \"🪄 Welcome, Mage!\"
+mkdir archive
+mv *.log archive/
+echo \"Logs sealed.\"`)" 
+          data-tooltip="Copy this ritual"
+          class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">
+          📋
+        </button>
+        <pre><code>#!/bin/bash
+echo "🪄 Welcome, Mage!"
+mkdir archive
+mv *.log archive/
+echo "Logs sealed."</code></pre>
+      </div>
+    </section>
+
+    <!-- ⚡ Logic & Chaining -->
+    <section class="bg-white/80 backdrop-blur rounded-2xl p-6 shadow-md mb-10">
+      <h2 class="text-2xl font-playfair text-pink-700 mb-3">⚡ Chaining and Logic</h2>
+      <p>You can combine spells using <code>&&</code> (if success), pipes <code>|</code> (pass output), or control structures like loops.</p>
+      <div class="relative bg-pink-100 text-sm p-4 rounded mb-2 overflow-x-auto">
+        <button 
+          onclick="navigator.clipboard.writeText(`ls | grep \"spell\"
+mkdir backup && echo \"Backup created\"`)" 
+          data-tooltip="Copy this combo"
+          class="absolute top-2 right-2 bg-pink-300 hover:bg-pink-400 text-white px-2 py-1 rounded-full text-xs shadow">
+          📋
+        </button>
+        <pre><code>ls | grep "spell"
+mkdir backup && echo "Backup created"</code></pre>
+      </div>
+    </section>
+
+    <!-- 🧵 Next Page Link -->
+    <div class="text-right mb-10">
+      <a href="cicd.html" class="text-pink-600 underline hover:text-pink-800">📜 Next: Automate the Ritual with CI/CD →</a>
+    </div>
+
+    <!-- ✨ Signature Quote -->
+    <div class="text-center">
+      <blockquote class="text-lg italic text-pink-600 mb-2">"Taught myself code. Then taught AI not to be a condescending little shit."</blockquote>
+    </div>
+
+  </main>
+
+  <!-- 🔧 Copy Feedback Script -->
+  <script>
+    // 🥚 If you found this, you're one of us. Welcome to the hidden guild.
+    document.querySelectorAll("button[data-tooltip]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const original = btn.innerHTML;
+        btn.innerHTML = "✅";
+        setTimeout(() => btn.innerHTML = original, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>
